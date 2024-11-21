@@ -1,0 +1,5 @@
+#qnav {
+    --colors-primary: #0076a6;
+    --colors-primary-hover: #0086ba;
+    --colors-primary-hover-opaque: rgba(0, 168, 214, 0.07);
+}

@@ -1,0 +1,218 @@
+a {
+    text-decoration: none;
+}
+
+#qnav {
+    --qnav-max-width: 1160px;
+    --colors-grey: #808080;
+    --colors-border: #d9d9d9;
+    --qnav-background-color: #fff;
+    font-size: 13px;
+    z-index: 990;
+    color: #333;
+    height: 55px;
+    box-shadow: 0 1px 2px 0 rgba(34, 36, 38, 0.15);
+    border-bottom: 1px solid var(--colors-border);
+    background: var(--qnav-background-color);
+}
+
+body.chakra-ui-dark #qnav {
+    --colors-border: #4a5568;
+    --colors-primary: #91def3;
+    --colors-primary-hover: #47c7eb;
+    --qnav-background-color: #2d3748;
+    color: #d9d9d9;
+}
+
+#qnav.fixed {
+    position: sticky;
+    top: 0;
+    right: 0;
+    width: 100%;
+}
+
+#qnav a:focus {
+    outline-color: rgba(66, 153, 225, 0.6);
+}
+
+.qnav-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#qnav__container {
+    position: relative;
+    max-width: var(--qnav-max-width);
+    padding: 0 14px;
+    margin: auto;
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+}
+
+#qnav.fluid #qnav__container {
+    max-width: none;
+    padding-left: 0;
+}
+
+#qnav__logo {
+    height: 100%;
+    margin-inline-end: 14px;
+}
+
+#qnav__logo img {
+    display: block;
+    width: 140px;
+    height: 26px;
+}
+
+#qnav__rightmenu {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+}
+
+#qnav__rightmenu a {
+    color: rgba(0, 0, 0, 0.7);
+    padding: 0.55em;
+    white-space: nowrap;
+}
+
+body.chakra-ui-dark #qnav__rightmenu a:not(.active) {
+    color: rgba(255, 255, 255, 0.7);
+    white-space: nowrap;
+}
+
+body.chakra-ui-dark #qnav__rightmenu a:not(.active) {
+    padding: 0.55em;
+}
+
+#qnav__rightmenu a.active {
+    color: var(--colors-primary);
+    font-weight: 800;
+}
+
+#qnav__rightmenu a:not(.active):hover {
+    color: rgba(0, 0, 0, 0.95);
+}
+
+body.chakra-ui-dark #qnav__rightmenu a:not(.active):hover {
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.qnav-burger {
+    z-index: 1010;
+}
+
+.qnav-leftmenu {
+    display: flex;
+    z-index: 1010;
+    align-items: center;
+}
+
+#qnav-banner__container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 65px;
+    justify-content: center;
+    padding-left: 8px;
+    transition: height 0.3s ease;
+    overflow-y: hidden;
+    cursor: pointer;
+    position: sticky;
+    z-index: 11;
+    flex-direction: column;
+    padding-block: 4px;
+}
+
+#qnav-banner__close-btn {
+    width: 24px;
+    min-width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: #ffffff55;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    padding: 0;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+#qnav-banner__close-btn:hover {
+    background-color: #ffffff99;
+}
+
+#qnav-banner__close-btn:focus {
+    background-color: #ffffff99;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(41, 128, 185, 0.75);
+}
+
+@media (min-width: 768px) {
+    #qnav .show-in-mobile {
+        display: none !important;
+    }
+
+    #qnav-banner__close-btn {
+        position: relative;
+        top: unset;
+        left: unset;
+        width: 32px;
+        height: 32px;
+        min-width: 32px;
+    }
+
+    #qnav-banner__container {
+        flex-direction: row;
+        height: 72px;
+    }
+}
+
+@media (max-width: 1160px) {
+    #qnav__container {
+        padding-left: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    #qnav__container {
+        padding: 0;
+    }
+
+    #qnav .hide-in-mobile {
+        display: none !important;
+    }
+
+    #qnav__logo {
+        position: absolute;
+        width: 100%;
+    }
+
+    #qnav__logo img {
+        width: 86px;
+        height: 16px;
+    }
+
+    #qnav__rightmenu {
+        display: none;
+    }
+}
+
+@media (min-width: 991px) {
+    #qnav .show-in-mobile-tablet {
+        display: none !important;
+    }
+}
+
+@media (max-width: 991px) {
+    #qnav .hide-in-mobile-tablet {
+        display: none !important;
+    }
+}
